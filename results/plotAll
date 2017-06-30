@@ -1,0 +1,13 @@
+#! /bin/bash
+
+source activate h2opy
+
+python ../implementation/h2o-benchmarker/gen_plots_from_sql.py -e plots -j journal_air_final.db plot_sets/airlines*[^l].yaml
+
+python ../implementation/h2o-benchmarker/gen_plots_from_sql.py -e plots -j journal_air_final_small.db plot_sets/airlines*small*
+
+python ../implementation/h2o-benchmarker/gen_plots_from_sql.py -e plots -j journal_higgs_final.db plot_sets/higgs*
+
+python ../implementation/h2o-benchmarker/gen_plots_from_sql.py -e plots -j journal_higgs100k_opt.db plot_sets/metaopt-higgs*
+
+python ../implementation/h2o-benchmarker/gen_plots_from_sql.py -e plots -j journal_air100k_opt.db plot_sets/metaopt-airlines*

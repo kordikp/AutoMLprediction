@@ -1,0 +1,17 @@
+#! /bin/bash
+
+cd $VYLET_PATH
+
+cd implementation/fakegame
+
+if ! make compile install; then
+  notify-send "FakeGame BUILD" "Failed"
+  exit 
+fi
+
+cd ../h2o-fakegame
+
+
+#./gradlew  :h2o-assembly:shadowJar && notify-send "H2O BUILD" "Finished successfully" || notify-send "H2O BUILD" "Failed"
+./gradlew  build -x test && notify-send "H2O BUILD" "Finished successfully" || notify-send "H2O BUILD" "Failed"
+

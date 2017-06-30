@@ -1,0 +1,54 @@
+<configuration.classifiers.ConnectableClassifierConfig>
+  <maxLearningVectors>-1</maxLearningVectors>
+  <maxInputsNumber>-1</maxInputsNumber>
+  <name>ConnectableClassifier(1111111111111)|ClassifierBoosting{5x ClassifierModel{&lt;outputs&gt;x SineModel,PolynomialModel(degree=2)}}|</name>
+  <config class="configuration.classifiers.ensemble.ClassifierBoostingConfig">
+    <classRef>game.classifiers.ensemble.ClassifierBoosting</classRef>
+    <maxLearningVectors>-1</maxLearningVectors>
+    <maxInputsNumber>-1</maxInputsNumber>
+    <classifiersNumber>5</classifiersNumber>
+    <baseClassifiersDef>RANDOM</baseClassifiersDef>
+    <baseClassifiersCfgs>
+      <configuration.classifiers.single.ClassifierModelConfig>
+        <classRef>game.classifiers.single.ClassifierModel</classRef>
+        <maxLearningVectors>-1</maxLearningVectors>
+        <maxInputsNumber>-1</maxInputsNumber>
+        <baseModelsDef>RANDOM</baseModelsDef>
+        <baseModelCfgs>
+          <configuration.models.single.SineModelConfig>
+            <classRef>game.models.single.SineModel</classRef>
+            <maxLearningVectors>-1</maxLearningVectors>
+            <maxInputsNumber>-1</maxInputsNumber>
+            <trainerClassName>QuasiNewtonTrainer</trainerClassName>
+            <validationPercent>30</validationPercent>
+            <validationEnabled>true</validationEnabled>
+          </configuration.models.single.SineModelConfig>
+          <configuration.models.single.PolynomialModelConfig>
+            <classRef>game.models.single.PolynomialModel</classRef>
+            <maxLearningVectors>-1</maxLearningVectors>
+            <maxInputsNumber>-1</maxInputsNumber>
+            <trainerClassName>QuasiNewtonTrainer</trainerClassName>
+            <validationPercent>30</validationPercent>
+            <validationEnabled>true</validationEnabled>
+            <maxDegree>2</maxDegree>
+          </configuration.models.single.PolynomialModelConfig>
+        </baseModelCfgs>
+      </configuration.classifiers.single.ClassifierModelConfig>
+    </baseClassifiersCfgs>
+  </config>
+  <selectedInputs>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+  </selectedInputs>
+</configuration.classifiers.ConnectableClassifierConfig>

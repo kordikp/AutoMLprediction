@@ -1,0 +1,54 @@
+<configuration.classifiers.ConnectableClassifierConfig>
+  <maxLearningVectors>-1</maxLearningVectors>
+  <maxInputsNumber>-1</maxInputsNumber>
+  <name>ConnectableClassifier(11)|ClassifierStackingProb{5x ClassifierModel{&lt;outputs&gt;x DivideModel(mult=1)[5x DivideModel(mult=1)[5x GaussianModel]]}}|</name>
+  <config class="configuration.classifiers.ensemble.ClassifierStackingProbConfig">
+    <classRef>game.classifiers.ensemble.ClassifierStackingProb</classRef>
+    <maxLearningVectors>-1</maxLearningVectors>
+    <maxInputsNumber>-1</maxInputsNumber>
+    <classifiersNumber>5</classifiersNumber>
+    <baseClassifiersDef>RANDOM</baseClassifiersDef>
+    <baseClassifiersCfgs>
+      <configuration.classifiers.single.ClassifierModelConfig>
+        <classRef>game.classifiers.single.ClassifierModel</classRef>
+        <maxLearningVectors>-1</maxLearningVectors>
+        <maxInputsNumber>-1</maxInputsNumber>
+        <baseModelsDef>RANDOM</baseModelsDef>
+        <baseModelCfgs>
+          <configuration.models.ensemble.DivideModelConfig>
+            <classRef>game.models.ensemble.ModelDivide</classRef>
+            <maxLearningVectors>-1</maxLearningVectors>
+            <maxInputsNumber>-1</maxInputsNumber>
+            <modelsNumber>5</modelsNumber>
+            <baseModelsDef>RANDOM</baseModelsDef>
+            <baseModelCfgs>
+              <configuration.models.ensemble.DivideModelConfig>
+                <classRef>game.models.ensemble.ModelDivide</classRef>
+                <maxLearningVectors>-1</maxLearningVectors>
+                <maxInputsNumber>-1</maxInputsNumber>
+                <modelsNumber>5</modelsNumber>
+                <baseModelsDef>RANDOM</baseModelsDef>
+                <baseModelCfgs>
+                  <configuration.models.single.GaussianModelConfig>
+                    <classRef>game.models.single.GaussianModel</classRef>
+                    <maxLearningVectors>-1</maxLearningVectors>
+                    <maxInputsNumber>-1</maxInputsNumber>
+                    <trainerClassName>QuasiNewtonTrainer</trainerClassName>
+                    <validationPercent>30</validationPercent>
+                    <validationEnabled>true</validationEnabled>
+                  </configuration.models.single.GaussianModelConfig>
+                </baseModelCfgs>
+                <clusterSizeMultiplier>1.0</clusterSizeMultiplier>
+              </configuration.models.ensemble.DivideModelConfig>
+            </baseModelCfgs>
+            <clusterSizeMultiplier>1.0</clusterSizeMultiplier>
+          </configuration.models.ensemble.DivideModelConfig>
+        </baseModelCfgs>
+      </configuration.classifiers.single.ClassifierModelConfig>
+    </baseClassifiersCfgs>
+  </config>
+  <selectedInputs>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+  </selectedInputs>
+</configuration.classifiers.ConnectableClassifierConfig>

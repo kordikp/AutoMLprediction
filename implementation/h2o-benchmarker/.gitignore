@@ -1,0 +1,9 @@
+.idea/*
+*.pyc
+__pycache__/*
+journal
+journal.db
+.Rhistory
+.envrc
+results/*
+jcool.log

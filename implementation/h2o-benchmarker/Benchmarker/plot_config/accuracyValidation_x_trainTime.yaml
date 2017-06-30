@@ -1,0 +1,10 @@
+!<Lines>
+name: Accuracy validation vs train time
+group_by: [model, params, cluster_name, nthreads]
+legend_labels: !!python/name:Benchmarker.utils.legend_label_fg ''
+style: o-
+title: Accuracy on Validation Data Set vs Training Time
+x_col: trainTime
+xlab: Training time [s]
+y_col: accuracy_validation
+ylab: Accuracy

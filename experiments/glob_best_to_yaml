@@ -1,0 +1,209 @@
+import yaml
+
+######### AIRLINES ##############################
+glm={'max_active_predictors': -1, 'standardize': True, 'family': 'binomial', 'solver': 'AUTO', 'beta_epsilon': 0.0001, 'nlambdas': -1, 'tweedie_link_power': 1.0, 'tweedie_variance_power': 0.0, 'non_negative': True, 'prior': -1.0, 'lambda_': 0.0, 'lambda_min_ratio': -1.0, 'balance_classes': True, 'alpha': 0.5, 'max_after_balance_size': 5.0, 'lambda_search': True, 'early_stopping': True, 'max_iterations': -1}
+drf={'min_split_improvement': 0.0002078782517407979, 'stopping_tolerance': 0.05124176293019856, 'ntrees': 300, 'nbins_top_level': 6494, 'binomial_double_trees': True, 'col_sample_rate_per_tree': 0.5244154102858287, 'min_rows': 66.73136925017744, 'stopping_metric': 'MSE', 'stopping_rounds': 0, 'col_sample_rate_change_per_level': 1.671069359375247, 'nbins_cats': 580, 'sample_rate': 0.6995956863368619, 'balance_classes': True, 'r2_stopping': 0.9841741016051299, 'max_after_balance_size': 0.9313822212592724, 'histogram_type': 'UniformAdaptive', 'max_depth': 162, 'nbins': 193}
+gbm={'learn_rate': 0.1, 'min_split_improvement': 1e-05, 'learn_rate_annealing': 1.0, 'col_sample_rate': 1.0, 'col_sample_rate_change_per_level': 1.0, 'stopping_tolerance': 0.001, 'col_sample_rate_per_tree': 1.0, 'quantile_alpha': 0.5, 'balance_classes': True, 'r2_stopping': 0.999999, 'histogram_type': 'AUTO', 'max_depth': 12, 'ntrees': 50, 'tweedie_power': 1.5, 'min_rows': 10.0, 'max_after_balance_size': 5.0, 'nbins': 20, 'stopping_metric': 'AUTO', 'stopping_rounds': 0, 'nbins_top_level': 1024, 'nbins_cats': 1024, 'sample_rate': 1.0}
+dl={'momentum_start': 0.0, 'shuffle_training_data': True, 'epochs': 10.0, 'rate': 0.005, 'input_dropout_ratio': 0.0, 'overwrite_with_best_model': True, 'use_all_factor_levels': True, 'stopping_tolerance': 0.0, 'fast_mode': True, 'nesterov_accelerated_gradient': True, 'quantile_alpha': 0.5, 'balance_classes': True, 'hidden': [200, 200], 'tweedie_power': 1.5, 'standardize': True, 'adaptive_rate': True, 'momentum_ramp': 1000000.0, 'epsilon': 1e-08, 'activation': 'Rectifier', 'elastic_averaging_regularization': 0.001, 'rate_annealing': 1e-06, 'rho': 0.99, 'initial_weight_distribution': 'UniformAdaptive', 'max_after_balance_size': 5.0, 'mini_batch_size': 1, 'rate_decay': 1.0, 'initial_weight_scale': 1.0, 'loss': 'Automatic', 'elastic_averaging_moving_rate': 0.9, 'stopping_metric': 'AUTO', 'stopping_rounds': 5, 'l2': 0.0, 'sparse': True, 'l1': 0.0, 'momentum_stable': 0.0}
+fgbp={'acceptableError': 0.0, 'learningRate': 0.2, 'activationFunction': 'sigmoid', 'hidden_l2': 0, 'trainingCycles': 600, 'momentum': 0.3, 'hidden_l1': 5}
+fgrprop={'etaMinus': 0.5, 'etaPlus': 1.2, 'acceptableError': 0.0, 'activationFunction': 'sigmoid', 'hidden_l2': 0, 'trainingCycles': 600, 'hidden_l1': 5}
+fgquickprop={'epsilon': 0.0007, 'maxGrowthFactor': 2.0, 'acceptableError': 0.0, 'splitEpsilon': True, 'activationFunction': 'sigmoid', 'hidden_l2': 0, 'trainingCycles': 600, 'hidden_l1': 5}
+fgcc={'usedAlg': 'Quickprop', 'activationFunction': 'sigmoid_offset', 'maxLayersNumber': 7, 'acceptableError': 0.10939678549099141, 'candNumber': 4}
+
+################# HIGGS ###########################
+gbm = {'learn_rate': 0.1, 'min_split_improvement': 1e-05, 'learn_rate_annealing': 1.0, 'col_sample_rate': 1.0, 'col_sample_rate_change_per_level': 1.0, 'stopping_tolerance': 0.001, 'col_sample_rate_per_tree': 1.0, 'quantile_alpha': 0.5, 'balance_classes': True, 'r2_stopping': 0.999999, 'histogram_type': 'AUTO', 'max_depth': 12, 'ntrees': 50, 'tweedie_power': 1.5, 'min_rows': 10.0, 'max_after_balance_size': 5.0, 'nbins': 20, 'stopping_metric': 'AUTO', 'stopping_rounds': 0, 'nbins_top_level': 1024, 'nbins_cats': 1024, 'sample_rate': 1.0}
+drf = {'min_split_improvement': 1e-05, 'stopping_tolerance': 0.001, 'ntrees': 50, 'nbins_top_level': 1024, 'binomial_double_trees': True, 'col_sample_rate_per_tree': 0.9629203783117701, 'min_rows': 1.0, 'stopping_metric': 'AUTO', 'stopping_rounds': 0, 'col_sample_rate_change_per_level': 1.0, 'nbins_cats': 1024, 'sample_rate': 0.632000029087, 'balance_classes': True, 'r2_stopping': 0.999999, 'max_after_balance_size': 5.0, 'histogram_type': 'AUTO', 'max_depth': 20, 'nbins': 20}
+dl={'momentum_start': 0.0, 'shuffle_training_data': True, 'epochs': 10.0, 'rate': 0.005, 'input_dropout_ratio': 0.0, 'overwrite_with_best_model': True, 'use_all_factor_levels': True, 'stopping_tolerance': 0.0, 'fast_mode': True, 'nesterov_accelerated_gradient': True, 'quantile_alpha': 0.5, 'balance_classes': True, 'hidden': [200, 200], 'tweedie_power': 1.5, 'standardize': True, 'adaptive_rate': True, 'momentum_ramp': 1000000.0, 'epsilon': 1e-08, 'activation': 'Rectifier', 'elastic_averaging_regularization': 0.001, 'rate_annealing': 1e-06, 'rho': 0.99, 'initial_weight_distribution': 'UniformAdaptive', 'max_after_balance_size': 5.0, 'mini_batch_size': 1, 'rate_decay': 1.0, 'initial_weight_scale': 1.0, 'loss': 'Automatic', 'elastic_averaging_moving_rate': 0.9, 'stopping_metric': 'AUTO', 'stopping_rounds': 5, 'l2': 0.0, 'sparse': True, 'l1': 0.0, 'momentum_stable': 0.0}
+glm={'max_active_predictors': 33, 'standardize': False, 'family': 'binomial', 'solver': 'IRLSM', 'beta_epsilon': 0.07447136831420569, 'nlambdas': 2, 'tweedie_link_power': 4.3632398875984615, 'tweedie_variance_power': 1.6234413359870292, 'non_negative': False, 'prior': -1, 'lambda_': 0.19771745806338448, 'lambda_min_ratio': 0.8527341553375176, 'balance_classes': True, 'alpha': 0.09529655266358539, 'max_after_balance_size': 3.079325460738345, 'lambda_search': True, 'early_stopping': False, 'max_iterations': 558}
+#
+fgcc={'usedAlg': 'Quickprop', 'activationFunction': 'symmetric_sigmoid', 'maxLayersNumber': 9, 'acceptableError': 0.24932294226149482, 'candNumber': 8}
+fgrp={'etaMinus': 0.956952984531956, 'etaPlus': 1.2, 'acceptableError': 0.0, 'activationFunction': 'sigmoid', 'hidden_l2': 0, 'trainingCycles': 600, 'hidden_l1': 5}
+fgbp={'acceptableError': 0.0, 'learningRate': 0.2, 'activationFunction': 'sigmoid', 'hidden_l2': 0, 'trainingCycles': 600, 'momentum': 0.3, 'hidden_l1': 5}
+fbqp={'epsilon': 0.0007, 'maxGrowthFactor': 2.0, 'acceptableError': 0.0, 'splitEpsilon': True, 'activationFunction': 'sigmoid', 'hidden_l2': 0, 'trainingCycles': 600, 'hidden_l1': 5}
+#
+
+
+
+####################################################
+models = [("glm", glm), ("drf",drf), ("gbm", gbm), ("dl", dl)]
+names = {"glm": "Generalized Linear Model", "gbm":"Gradient Boosting", "dl":"Deep Learning", "drf": "Distributed Random Forest"}
+for (n,m) in models:
+    for (k,v) in m.iteritems():
+        m[k]=[v]
+    print()        
+    print(n)
+    print(yaml.dump({"model": { n+"_opt" :{"base_model": "----", "name":names[n] + " (optimized)", "params_grid" : m}}}))
+    
+    
+
+def switch(options, selected):
+    return "\n          ".join(["<boolean>{}</boolean>".format("true" if x == selected else "false") for x in options])
+
+def backPropagation(hidden_l1=5, hidden_l2=0, trainingCycles=600, acceptableError=0.0, learningRate=0.2,
+                    momentum = 0.3, activationFunction = "sigmoid"):
+    return """
+<configuration.classifiers.single.ClassifierModelConfig>
+  <classRef>game.classifiers.single.ClassifierModel</classRef>
+  <description>BackPropagation classifier</description>
+  <maxLearningVectors>-1</maxLearningVectors>
+  <maxInputsNumber>-1</maxInputsNumber>
+  <baseModelsDef>UNIFORM</baseModelsDef>
+  <baseModelCfgs>
+    <configuration.models.single.neural.BackPropagationModelConfig>
+      <classRef>game.models.single.neural.BackPropagationModel</classRef>
+      <maxLearningVectors>-1</maxLearningVectors>
+      <maxInputsNumber>-1</maxInputsNumber>
+      <firstLayerNeurons>{hidden_l1}</firstLayerNeurons>
+      <secondLayerNeurons>{hidden_l2}</secondLayerNeurons>
+      <trainingCycles>{trainingCycles}</trainingCycles>
+      <acceptableError>{acceptableError}</acceptableError>
+      <activationFunction>
+        <elements class="string-array">
+          <string>sigmoid</string>
+          <string>sigmoid_offset</string>
+        </elements>
+        <elementEnabled>
+          {activationFunction}
+        </elementEnabled>
+      </activationFunction>
+      <learningRate>{learningRate}</learningRate>
+      <momentum>{momentum}</momentum>
+    </configuration.models.single.neural.BackPropagationModelConfig>
+  </baseModelCfgs>
+</configuration.classifiers.single.ClassifierModelConfig>
+    """.format(hidden_l1 = hidden_l1, hidden_l2 = hidden_l2, trainingCycles = trainingCycles,
+               acceptableError = acceptableError, learningRate = learningRate, momentum = momentum,
+               activationFunction=switch(["sigmoid", "sigmoid_offset"], activationFunction))
+
+
+def cascadeCorrelation(acceptableError = 0.001, maxLayersNumber = 5, candNumber = 1, usedAlg = "Rprop",
+                       activationFunction="sigmoid_offset"):
+    return """
+<configuration.classifiers.single.ClassifierModelConfig>
+  <classRef>game.classifiers.single.ClassifierModel</classRef>
+  <description>Cascade Correlation classifier</description>
+  <maxLearningVectors>-1</maxLearningVectors>
+  <maxInputsNumber>-1</maxInputsNumber>
+  <baseModelsDef>UNIFORM</baseModelsDef>
+  <baseModelCfgs>
+    <configuration.models.single.neural.CascadeCorrelationModelConfig>
+      <classRef>game.models.single.neural.CascadeCorrelationModel</classRef>
+      <maxLearningVectors>-1</maxLearningVectors>
+      <maxInputsNumber>-1</maxInputsNumber>
+      <acceptableError>{acceptableError}</acceptableError>
+      <maxLayersNumber>{maxLayersNumber}</maxLayersNumber>
+      <candNumber>{candNumber}</candNumber>
+      <usedAlg>
+        <elements class="string-array">
+          <string>Quickprop</string>
+          <string>Rprop</string>
+        </elements>
+        <elementEnabled>
+          {usedAlg}
+        </elementEnabled>
+      </usedAlg>
+      <activationFunction>
+        <elements class="string-array">
+          <string>sigmoid</string>
+          <string>sigmoid_offset</string>
+          <string>symmetric_sigmoid</string>
+        </elements>
+        <elementEnabled>
+          {activationFunction}
+        </elementEnabled>
+      </activationFunction>
+    </configuration.models.single.neural.CascadeCorrelationModelConfig>
+  </baseModelCfgs>
+</configuration.classifiers.single.ClassifierModelConfig>
+""".format(acceptableError = acceptableError, maxLayersNumber = maxLayersNumber, candNumber = candNumber,
+           usedAlg=switch(["Quickprop", "Rprop"], usedAlg),
+           activationFunction=switch(["sigmoid", "sigmoid_offset", "symmetric_sigmoid"], activationFunction))
+
+
+
+def quickProp(hidden_l1 = 5, hidden_l2 = 0, trainingCycles=600, acceptableError=0.0, activationFunction="sigmoid",
+              maxGrowthFactor=2.0, epsilon = 7.0e-4, splitEpsilon=False):
+    return """
+<configuration.classifiers.single.ClassifierModelConfig>
+  <classRef>game.classifiers.single.ClassifierModel</classRef>
+  <description>QuickProp classifier</description>
+  <maxLearningVectors>-1</maxLearningVectors>
+  <maxInputsNumber>-1</maxInputsNumber>
+  <baseModelsDef>UNIFORM</baseModelsDef>
+  <baseModelCfgs>
+    <configuration.models.single.neural.QuickpropModelConfig>
+      <classRef>game.models.single.neural.QuickpropModel</classRef>
+      <maxLearningVectors>-1</maxLearningVectors>
+      <maxInputsNumber>-1</maxInputsNumber>
+      <firstLayerNeurons>{hidden_l1}</firstLayerNeurons>
+      <secondLayerNeurons>{hidden_l2}</secondLayerNeurons>
+      <trainingCycles>{trainingCycles}</trainingCycles>
+      <acceptableError>{acceptableError}</acceptableError>
+      <activationFunction>
+        <elements class="string-array">
+          <string>sigmoid</string>
+          <string>sigmoid_offset</string>
+          <string>symmetric_sigmoid</string>
+        </elements>
+        <elementEnabled>
+          {activationFunction}
+        </elementEnabled>
+      </activationFunction>
+      <maxGrowthFactor>{maxGrowthFactor}</maxGrowthFactor>
+      <epsilon>{epsilon}</epsilon>
+      <splitEpsilon>{splitEpsilon}</splitEpsilon>
+    </configuration.models.single.neural.QuickpropModelConfig>
+  </baseModelCfgs>
+</configuration.classifiers.single.ClassifierModelConfig>
+    """.format(hidden_l1 = hidden_l1, hidden_l2 = hidden_l2, trainingCycles=trainingCycles,
+               acceptableError=acceptableError, activationFunction=switch(["sigmoid", "sigmoid_offset",
+                                                                            "symmetric_sigmoid"], activationFunction),
+               maxGrowthFactor=maxGrowthFactor, epsilon=epsilon, splitEpsilon = splitEpsilon)
+
+
+def rProp(hidden_l1 = 5, hidden_l2 = 0, trainingCycles=600, acceptableError=0.0, activationFunction="sigmoid",
+          etaMinus=0.5, etaPlus=1.2):
+    return """
+<configuration.classifiers.single.ClassifierModelConfig>
+  <classRef>game.classifiers.single.ClassifierModel</classRef>
+  <description>Rprop classifier</description>
+  <maxLearningVectors>-1</maxLearningVectors>
+  <maxInputsNumber>-1</maxInputsNumber>
+  <baseModelsDef>UNIFORM</baseModelsDef>
+  <baseModelCfgs>
+    <configuration.models.single.neural.RpropModelConfig>
+      <classRef>game.models.single.neural.RpropModel</classRef>
+      <maxLearningVectors>-1</maxLearningVectors>
+      <maxInputsNumber>-1</maxInputsNumber>
+      <firstLayerNeurons>{hidden_l1}</firstLayerNeurons>
+      <secondLayerNeurons>{hidden_l2}</secondLayerNeurons>
+      <trainingCycles>{trainingCycles}</trainingCycles>
+      <acceptableError>{acceptableError}</acceptableError>
+      <activationFunction>
+        <elements class="string-array">
+          <string>sigmoid</string>
+          <string>sigmoid_offset</string>
+          <string>symmetric_sigmoid</string>
+        </elements>
+        <elementEnabled>
+          {activationFunction}
+        </elementEnabled>
+      </activationFunction>
+      <etaMinus>{etaMinus}</etaMinus>
+      <etaPlus>{etaPlus}</etaPlus>
+    </configuration.models.single.neural.RpropModelConfig>
+  </baseModelCfgs>
+</configuration.classifiers.single.ClassifierModelConfig>
+    """.format(hidden_l1 = hidden_l1, hidden_l2 = hidden_l2, trainingCycles=trainingCycles,
+               acceptableError=acceptableError, activationFunction=switch(["sigmoid", "sigmoid_offset",
+                                                                            "symmetric_sigmoid"], activationFunction),
+               etaMinus=etaMinus, etaPlus=etaPlus)
+               
+fgmodels = [("fgbp", fgbp, backPropagation), ("fgcc",fgcc, cascadeCorrelation), ("fgrprop", fgrprop, rProp), ("fgquickprop", fgquickprop, quickProp)]
+
+output = []
+for _,conf, fun in fgmodels:
+    import re
+    output.append(re.sub(r"\n\s*","",fun(**conf)))
+
+print(output)

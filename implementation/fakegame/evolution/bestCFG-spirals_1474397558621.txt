@@ -1,0 +1,45 @@
+<configuration.classifiers.ConnectableClassifierConfig>
+  <maxLearningVectors>-1</maxLearningVectors>
+  <maxInputsNumber>-1</maxInputsNumber>
+  <name>ConnectableClassifier(11)|ClassifierModel{&lt;outputs&gt;x CascadeGenModel[5x AreaSpecializationModel(area=7,spec=5)[5x GaussianModel]]}|</name>
+  <config class="configuration.classifiers.single.ClassifierModelConfig">
+    <classRef>game.classifiers.single.ClassifierModel</classRef>
+    <maxLearningVectors>-1</maxLearningVectors>
+    <maxInputsNumber>-1</maxInputsNumber>
+    <baseModelsDef>RANDOM</baseModelsDef>
+    <baseModelCfgs>
+      <configuration.models.ensemble.CascadeGenModelConfig>
+        <classRef>game.models.ensemble.ModelCascadeGen</classRef>
+        <maxLearningVectors>-1</maxLearningVectors>
+        <maxInputsNumber>-1</maxInputsNumber>
+        <modelsNumber>5</modelsNumber>
+        <baseModelsDef>RANDOM</baseModelsDef>
+        <baseModelCfgs>
+          <configuration.models.ensemble.AreaSpecializationModelConfig>
+            <classRef>game.models.ensemble.ModelAreaSpecialization</classRef>
+            <maxLearningVectors>-1</maxLearningVectors>
+            <maxInputsNumber>-1</maxInputsNumber>
+            <modelsNumber>5</modelsNumber>
+            <baseModelsDef>RANDOM</baseModelsDef>
+            <baseModelCfgs>
+              <configuration.models.single.GaussianModelConfig>
+                <classRef>game.models.single.GaussianModel</classRef>
+                <maxLearningVectors>-1</maxLearningVectors>
+                <maxInputsNumber>-1</maxInputsNumber>
+                <trainerClassName>QuasiNewtonTrainer</trainerClassName>
+                <validationPercent>30</validationPercent>
+                <validationEnabled>true</validationEnabled>
+              </configuration.models.single.GaussianModelConfig>
+            </baseModelCfgs>
+            <area>7</area>
+            <modelsSpecialization>5.0</modelsSpecialization>
+          </configuration.models.ensemble.AreaSpecializationModelConfig>
+        </baseModelCfgs>
+      </configuration.models.ensemble.CascadeGenModelConfig>
+    </baseModelCfgs>
+  </config>
+  <selectedInputs>
+    <boolean>true</boolean>
+    <boolean>true</boolean>
+  </selectedInputs>
+</configuration.classifiers.ConnectableClassifierConfig>

@@ -1,0 +1,7 @@
+!<PlotSet>
+plots:
+  - $accuracyTest_x_trainTime
+  - $accuracyValidation_x_trainTime
+  - $accuracyTest_x_subset
+  - $trainTime_x_subset
+query: Select * FROM results WHERE resId > 10 

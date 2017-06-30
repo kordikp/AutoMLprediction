@@ -1,0 +1,45 @@
+= README
+
+== How to run
+Example:
+
+ $ python main.py -i 127.0.0.1 -p 54321 -f exp.yaml -e /tmp -j journal
+
+== How to create an experiment
+
+In python:
+
+[source, python]
+----
+include::examples/exp1.py[]
+----
+
+Or in YAML:
+
+[source, yaml]
+----
+include::examples/exp1.yaml[]
+----
+
+
+=== Warning
+
+Various models implement different parameters used to determine whether it is a regression or classification model.
+Usually this parameter is called `distribution` and it's values are `binomial` or `multinomial` depending on the number
+of response classes (two or more respectively). However there are models that use different parameter that means basically
+the same (in this sense) such as GLM that uses family parameter.
+
+===== Models that use `distribution` parameter
+* Deeplearning
+* Gradient Boosting model
+
+===== Models that use `family` paramter
+* Generalized linear model
+
+
+
+
+== How to plot
+
+TODO
+

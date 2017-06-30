@@ -1,0 +1,13 @@
+#! /bin/bash 
+
+cd $VYLET_PATH/implementation/h2o-fakegame
+
+./gradlew --daemon
+
+cd ..
+
+while true; do
+	inotifywait -e modify -r h2o-fakegame/ -r fakegame/ --excludei '.*/\..*'
+	sleep 1
+	./buildH2O
+done

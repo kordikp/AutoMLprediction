@@ -1,0 +1,14 @@
+digraph {
+    rankdir=LR
+    nodesep=2
+    o[shape="circle", label=""]
+    fit[label="fit probabilistic model\n on collected pairs so far", shape="rect"]
+    sel[label="select promising hyperparameters using acquisition\n function on probabilistic model", shape="rect"]
+    eval[label="evaluate target model\n with new hyperparameters", shape="rect"]
+ 
+    o -> fit
+    fit -> sel
+    sel -> eval
+    eval -> fit [label="add new pair (hyperparameters, model performance)"]
+
+}

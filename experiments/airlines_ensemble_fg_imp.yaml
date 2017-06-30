@@ -1,0 +1,45 @@
+!<Experiment>
+name: Airlines-ensemble-fakegame-imputed
+filename: /home/ubuntu/frydatom-vylet-2016/data/airlines_imputed_100k.csv
+models:
+  ens: !<SLModelConfig>
+      name: H2O Ensemble
+      params_grid:
+          family: [binomial]
+          learner: [[h2o.glm.wrapper, h2o.randomForest.1,  h2o.gbm.1, h2o.deeplearning.1]]
+          cvControl: [V: 5, V: 10]
+  deeplearning: !<ModelConfig>
+      base_model: !!python/name:h2o.estimators.deeplearning.H2ODeepLearningEstimator ''
+      name: Deep Learning
+      params_grid:
+          distribution: [bernoulli]
+  gbm: !<ModelConfig>
+      base_model: !!python/name:h2o.estimators.gbm.H2OGradientBoostingEstimator ''
+      name: Gradient Boosting
+      params_grid:
+          ntrees: [10, 50]
+          distribution: [bernoulli]
+  glm: !<ModelConfig>
+      base_model: !!python/name:h2o.estimators.glm.H2OGeneralizedLinearEstimator ''
+      name: Generalized Linear Model
+      params_grid: 
+          family: [binomial]
+  drf: !<ModelConfig>
+      base_model: !!python/name:h2o.estimators.random_forest.H2ORandomForestEstimator ''
+      name: Distributed Random Forest
+      params_grid: {}
+  fg: !<ModelConfig>
+      base_model: !!python/name:h2o.estimators.fakegame.H2OFakeGameEstimator ''
+      name: FakeGame
+      params_grid:
+          model_config: ['<configuration.classifiers.single.ClassifierModelConfig> <classRef>game.classifiers.single.ClassifierModel</classRef>  <description>Sine without scaling and shift classifier</description>  <maxLearningVectors>-1</maxLearningVectors>  <maxInputsNumber>-1</maxInputsNumber>  <baseModelsDef>UNIFORM</baseModelsDef> <baseModelCfgs> <configuration.models.single.SineNormModelConfig> <classRef>game.models.single.SineNormModel</classRef> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <trainerClassName>QuasiNewtonTrainer</trainerClassName> <trainerCfg class="configuration.game.trainers.QuasiNewtonConfig"> <rec>10</rec> <draw>10</draw> <forceAnalyticHessian>false</forceAnalyticHessian> </trainerCfg> <validationPercent>30</validationPercent> <validationEnabled>true</validationEnabled> </configuration.models.single.SineNormModelConfig> </baseModelCfgs> </configuration.classifiers.single.ClassifierModelConfig>', '<configuration.classifiers.single.ClassifierModelConfig> <classRef>game.classifiers.single.ClassifierModel</classRef> <description>Sine classifier (each class separate periodic occurrence</description> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <baseModelsDef>UNIFORM</baseModelsDef> <baseModelCfgs> <configuration.models.single.SineModelConfig> <classRef>game.models.single.SineModel</classRef> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <trainerClassName>QuasiNewtonTrainer</trainerClassName> <trainerCfg class="configuration.game.trainers.QuasiNewtonConfig"> <rec>10</rec> <draw>10</draw> <forceAnalyticHessian>false</forceAnalyticHessian> </trainerCfg> <validationPercent>30</validationPercent> <validationEnabled>true</validationEnabled> </configuration.models.single.SineModelConfig> </baseModelCfgs> </configuration.classifiers.single.ClassifierModelConfig>','<configuration.classifiers.single.ClassifierModelConfig> <classRef>game.classifiers.single.ClassifierModel</classRef> <description>Sigmoid classifier (without scaling and shift coefficients)</description> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <baseModelsDef>UNIFORM</baseModelsDef> <baseModelCfgs> <configuration.models.single.SigmoidNormModelConfig> <classRef>game.models.single.SigmoidNormModel</classRef> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <trainerClassName>QuasiNewtonTrainer</trainerClassName> <trainerCfg class="configuration.game.trainers.QuasiNewtonConfig"> <rec>10</rec> <draw>10</draw> <forceAnalyticHessian>false</forceAnalyticHessian> </trainerCfg> <validationPercent>30</validationPercent> <validationEnabled>true</validationEnabled> </configuration.models.single.SigmoidNormModelConfig> </baseModelCfgs> </configuration.classifiers.single.ClassifierModelConfig>','<configuration.classifiers.single.ClassifierModelConfig> <classRef>game.classifiers.single.ClassifierModel</classRef> <description>Sigmoid classifier</description> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <baseModelsDef>UNIFORM</baseModelsDef> <baseModelCfgs> <configuration.models.single.SigmoidModelConfig> <classRef>game.models.single.SigmoidModel</classRef> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <trainerClassName>QuasiNewtonTrainer</trainerClassName> <trainerCfg class="configuration.game.trainers.QuasiNewtonConfig"> <rec>10</rec> <draw>10</draw> <forceAnalyticHessian>false</forceAnalyticHessian> </trainerCfg> <validationPercent>30</validationPercent> <validationEnabled>true</validationEnabled> </configuration.models.single.SigmoidModelConfig> </baseModelCfgs> </configuration.classifiers.single.ClassifierModelConfig>',
+          '<configuration.classifiers.single.ClassifierModelConfig> <classRef>game.classifiers.single.ClassifierModel</classRef> <description>Polynomial classifier with max degree 5</description> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <baseModelsDef>UNIFORM</baseModelsDef> <baseModelCfgs> <configuration.models.single.PolynomialModelConfig> <classRef>game.models.single.PolynomialModel</classRef> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <trainerClassName>QuasiNewtonTrainer</trainerClassName> <trainerCfg class="configuration.game.trainers.QuasiNewtonConfig"> <rec>10</rec> <draw>10</draw> <forceAnalyticHessian>false</forceAnalyticHessian> </trainerCfg> <validationPercent>30</validationPercent> <validationEnabled>true</validationEnabled> <maxDegree>5</maxDegree> </configuration.models.single.PolynomialModelConfig> </baseModelCfgs> </configuration.classifiers.single.ClassifierModelConfig>','<configuration.classifiers.single.ClassifierModelConfig> <classRef>game.classifiers.single.ClassifierModel</classRef> <description>Linear Class Separation</description> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <baseModelsDef>UNIFORM</baseModelsDef> <baseModelCfgs> <configuration.models.single.LinearModelConfig> <classRef>game.models.single.LinearModel</classRef> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <trainerClassName>QuasiNewtonTrainer</trainerClassName> <trainerCfg class="configuration.game.trainers.QuasiNewtonConfig"> <rec>10</rec> <draw>10</draw> <forceAnalyticHessian>false</forceAnalyticHessian> </trainerCfg> <validationPercent>30</validationPercent> <validationEnabled>true</validationEnabled> <retrainWhenLmsFails>false</retrainWhenLmsFails> </configuration.models.single.LinearModelConfig> </baseModelCfgs> </configuration.classifiers.single.ClassifierModelConfig>', '<configuration.classifiers.single.ClassifierModelConfig> <classRef>game.classifiers.single.ClassifierModel</classRef> <description>Exponencial classifier</description> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <baseModelsDef>UNIFORM</baseModelsDef> <baseModelCfgs> <configuration.models.single.ExpModelConfig> <classRef>game.models.single.ExpModel</classRef> <maxLearningVectors>-1</maxLearningVectors> <maxInputsNumber>-1</maxInputsNumber> <trainerClassName>QuasiNewtonTrainer</trainerClassName> <trainerCfg class="configuration.game.trainers.QuasiNewtonConfig"> <rec>10</rec> <draw>10</draw> <forceAnalyticHessian>false</forceAnalyticHessian> </trainerCfg> <validationPercent>30</validationPercent> <validationEnabled>true</validationEnabled> </configuration.models.single.ExpModelConfig> </baseModelCfgs> </configuration.classifiers.single.ClassifierModelConfig>']
+subsets:
+  min_fraction_denom: 1
+  max_fraction_denom: 100
+  number_of_samples: 10
+train_ratio: 0.5
+validation_ratio: 0.75
+x: ["Year","Month","DayofMonth","DayOfWeek","DepTime","CRSDepTime","ArrTime","CRSArrTime","UniqueCarrier","FlightNum","TailNum","Origin","Dest","Distance","TaxiIn"]
+y: "IsDepDelayed"
+

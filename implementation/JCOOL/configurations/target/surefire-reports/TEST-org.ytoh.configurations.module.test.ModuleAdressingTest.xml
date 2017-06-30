@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="2" failures="0" name="org.ytoh.configurations.module.test.ModuleAdressingTest" time="0.006" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.91-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="CZ"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/kordikp/dev/prediction/frydatom-vylet-2016/implementation/JCOOL/configurations/target"/>
+    <property name="java.runtime.version" value="1.8.0_91-8u91-b14-3ubuntu1~16.04.1-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/home/kordikp/dev/prediction/frydatom-vylet-2016/implementation/JCOOL/configurations"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter345959907949251551.jar"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="surefire.test.class.path" value="/home/kordikp/dev/prediction/frydatom-vylet-2016/implementation/JCOOL/configurations/target/test-classes:/home/kordikp/dev/prediction/frydatom-vylet-2016/implementation/JCOOL/configurations/target/classes:/home/kordikp/.m2/repository/junit/junit/4.4/junit-4.4.jar:/home/kordikp/.m2/repository/commons-io/commons-io/1.4/commons-io-1.4.jar:/home/kordikp/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/home/kordikp/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/kordikp/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar:/home/kordikp/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/home/kordikp/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/home/kordikp/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/home/kordikp/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar:/home/kordikp/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar:/home/kordikp/.m2/repository/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA.jar:/home/kordikp/.m2/repository/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar:/home/kordikp/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar:/home/kordikp/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/home/kordikp/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/kordikp/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.3/jaxb-impl-2.1.3.jar:/home/kordikp/.m2/repository/org/slf4j/slf4j-log4j12/1.4.2/slf4j-log4j12-1.4.2.jar:/home/kordikp/.m2/repository/log4j/log4j/1.2.13/log4j-1.2.13.jar:/home/kordikp/.m2/repository/com/jgoodies/binding/2.0.6/binding-2.0.6.jar:/home/kordikp/.m2/repository/net/java/dev/swing-layout/swing-layout/1.0.2/swing-layout-1.0.2.jar:/home/kordikp/.m2/repository/com/jgoodies/forms/1.2.1/forms-1.2.1.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.4.0-45-generic"/>
+    <property name="user.home" value="/home/kordikp"/>
+    <property name="user.timezone" value="Europe/Prague"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="user.name" value="kordikp"/>
+    <property name="java.class.path" value="/home/kordikp/dev/prediction/frydatom-vylet-2016/implementation/JCOOL/configurations/target/test-classes:/home/kordikp/dev/prediction/frydatom-vylet-2016/implementation/JCOOL/configurations/target/classes:/home/kordikp/.m2/repository/junit/junit/4.4/junit-4.4.jar:/home/kordikp/.m2/repository/commons-io/commons-io/1.4/commons-io-1.4.jar:/home/kordikp/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/home/kordikp/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/kordikp/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar:/home/kordikp/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar:/home/kordikp/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/home/kordikp/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/home/kordikp/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar:/home/kordikp/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar:/home/kordikp/.m2/repository/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA.jar:/home/kordikp/.m2/repository/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar:/home/kordikp/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar:/home/kordikp/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/home/kordikp/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/kordikp/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.3/jaxb-impl-2.1.3.jar:/home/kordikp/.m2/repository/org/slf4j/slf4j-log4j12/1.4.2/slf4j-log4j12-1.4.2.jar:/home/kordikp/.m2/repository/log4j/log4j/1.2.13/log4j-1.2.13.jar:/home/kordikp/.m2/repository/com/jgoodies/binding/2.0.6/binding-2.0.6.jar:/home/kordikp/.m2/repository/net/java/dev/swing-layout/swing-layout/1.0.2/swing-layout-1.0.2.jar:/home/kordikp/.m2/repository/com/jgoodies/forms/1.2.1/forms-1.2.1.jar:"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="/tmp/surefirebooter345959907949251551.jar /tmp/surefire3303565184496917495tmp /tmp/surefire6594267827499909440tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="cs"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_91"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="/home/kordikp/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="org.ytoh.configurations.module.test.ModuleAdressingTest" name="moduleFullNames" time="0.004"/>
+  <testcase classname="org.ytoh.configurations.module.test.ModuleAdressingTest" name="moduleFromName" time="0.001"/>
+</testsuite>

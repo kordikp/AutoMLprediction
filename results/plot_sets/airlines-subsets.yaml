@@ -1,0 +1,13 @@
+!<PlotSet>
+name: Airlines-subsets
+plots:
+  - $accuracyTest_x_trainTime
+  - $accuracyTest_x_subset
+  - $accuracyTrain_x_trainTime
+  - $accuracyValidation_x_trainTime
+  - $accuracyTest_x_trainTime_log
+  - $accuracyTrain_x_trainTime_log
+  - $accuracyValidation_x_trainTime_log
+  - $trainTime_x_subset
+  - $totalTime_x_subset
+query: Select * FROM results WHERE NOT name LIKE "%100k%"

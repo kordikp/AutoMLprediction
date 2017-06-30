@@ -1,0 +1,22 @@
+!<PlotSet>
+name: Metaopt-higgs
+plots:
+  - $metaopt_accuracyTest_x_initTime
+  - $metaopt_accuracyTest_x_initTime_with_points
+  - $metaopt_accuracyTest_x_initTime_log
+  - $metaopt_accuracyTest_x_initTime_log_with_points
+  - $metaopt_aucTest_x_initTime
+  - $metaopt_aucTest_x_initTime_with_points
+  - $metaopt_aucTest_x_initTime_log
+  - $metaopt_aucTest_x_initTime_log_with_points
+  - $metaopt_aucTest_violin
+  - $metaopt_aucValid_violin
+  - $metaopt_accuracyValid_violin
+  - $metaopt_accuracyTest_violin
+  - $metaopt_aucTest_violin_no_split
+  - $metaopt_aucValid_violin_no_split
+  - $metaopt_accuracyValid_violin_no_split
+  - $metaopt_accuracyTest_violin_no_split
+  - $metaopt_trainTime_violin
+  - $metaopt_trainTime_violin_no_split
+query: SELECT * FROM results 

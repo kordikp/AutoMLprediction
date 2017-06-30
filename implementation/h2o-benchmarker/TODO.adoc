@@ -1,0 +1,10 @@
+= TODO
+
+== Plot
+* Beautify labels [in progress]
+* add more info to README
+
+
+== Data preprocessing
+* Fix `h2o.import_file(na_strings=[])` in `experiment.py`
+* Handle case in which sample of train/validation/test data has less than 20 rows (LOW PRIORITY, unlikely to happen with larger data sets)
